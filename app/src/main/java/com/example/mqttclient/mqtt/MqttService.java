@@ -52,7 +52,13 @@ public class MqttService extends Service {
                 client.subscribe(topic, 1);
             }
         }
-        public void unSubscribe(String topic, String message) throws MqttException {
+        public void unSubscribe(String topic) throws MqttException {
+            if (client != null && client.isConnected()) {
+                client.unsubscribe(topic);
+            }
+        }
+
+        public void publishMessage(String topic, String message) throws MqttException {
             if (client != null && client.isConnected()) {
                 client.publish(topic, message.getBytes(), 0, false);
             }
@@ -60,6 +66,7 @@ public class MqttService extends Service {
         public void setMqttEventCallback(MqttEventCallBack callback) {
             mqttEventCallBack = callback;
         }
+
     }
     private void connect(MqttParameters parameters) {
         disConnect();

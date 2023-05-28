@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements MqttService.MqttE
 
     void unSubscribeTopics() {
         try {
-            mqttBinder.unSubscribe("/test", "123");
+            mqttBinder.unSubscribe("/test");
         } catch (MqttException e) {
             e.printStackTrace();
         }
