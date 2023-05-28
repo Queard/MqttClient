@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mqttclient.mqtt.MqttService;
 import com.example.mqttclient.protocol.AirConditioningMessage;
