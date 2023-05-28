@@ -61,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
                         , etClinetId.getText().toString()
                         , etUserName.getText().toString()
                         , etPassword.getText().toString()));
-                Toast.makeText(SettingsActivity.this, "保持成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsActivity.this, "保存成功", Toast.LENGTH_SHORT).show();
                 mqttBinder.reConnect();
                 finish();
             }
