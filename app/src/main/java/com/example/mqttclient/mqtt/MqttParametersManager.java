@@ -19,7 +19,7 @@ public class MqttParametersManager {
     public static  MqttParameters readConfig(Context context) {
         SharedPreferences preferences = context.getSharedPreferences("MattParameters",
                 Context.MODE_PRIVATE);
-        return new MqttParameters(preferences.getString("serverIp", "192.168.1.101")
+        return new MqttParameters(preferences.getString("serverIp", "172.16.56.72")
             , preferences.getString("port", "1883")
             , preferences.getString("clientId", "clientAndroid")
             , preferences.getString("userName", "")

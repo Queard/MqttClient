@@ -20,7 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private MqttService.MqttBinder mqttBinder;
     private String TAG = "SettingsActivity";
-    private EditText etServerIp, etPort, etClinetId, etUserName, etPassword;
+    private EditText etServerIp, etPort, etClientId, etUserName, etPassword;
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
@@ -42,13 +42,13 @@ public class SettingsActivity extends AppCompatActivity {
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
         etServerIp = findViewById(R.id.et_server_ip);
         etPort = findViewById(R.id.et_server_port);
-        etClinetId = findViewById(R.id.et_client_id);
+        etClientId = findViewById(R.id.et_client_id);
         etUserName = findViewById(R.id.et_user_name);
         etPassword = findViewById(R.id.et_password);
         MqttParameters mqttParameters = MqttParametersManager.readConfig(SettingsActivity.this);
         etServerIp.setText(mqttParameters.serverIp);
         etPort.setText(mqttParameters.port);
-        etClinetId.setText(mqttParameters.clientId);
+        etClientId.setText(mqttParameters.clientId);
         etUserName.setText(mqttParameters.userName);
         etPassword.setText(mqttParameters.passWord);
 
@@ -58,7 +58,7 @@ public class SettingsActivity extends AppCompatActivity {
                 MqttParametersManager.saveConfig(SettingsActivity.this,
                         new MqttParameters(etServerIp.getText().toString()
                         , etPort.getText().toString()
-                        , etClinetId.getText().toString()
+                        , etClientId.getText().toString()
                         , etUserName.getText().toString()
                         , etPassword.getText().toString()));
                 Toast.makeText(SettingsActivity.this, "保存成功", Toast.LENGTH_SHORT).show();
