@@ -27,4 +27,11 @@
         android:layout_height="wrap_content"
         android:text="示例设备"
         android:textSize="20sp"/>
+
+    <com.example.mqttclient.view.CurveView
+        android:id="@+id/curveView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"/>
+
 </LinearLayout>

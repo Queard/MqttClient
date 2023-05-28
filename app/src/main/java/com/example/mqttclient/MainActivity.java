@@ -13,8 +13,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.mqttclient.mqtt.MqttService;
+import com.example.mqttclient.view.CurveView;
 
 import org.eclipse.paho.client.mqttv3.MqttException;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MqttService.MqttEventCallBack{
 
@@ -71,6 +75,12 @@ public class MainActivity extends AppCompatActivity implements MqttService.MqttE
                 startActivity(intent);
             }
         });
+
+        CurveView curveView = findViewById(R.id.curveView);
+        List<String> xList = Arrays.asList("1","2","3","4","5");
+        List<String> yList = Arrays.asList("0","50","55","51","53");
+        curveView.setData(xList, yList);
+
     }
 
     void subscribeTopics() {
